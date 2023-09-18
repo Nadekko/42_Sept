@@ -6,7 +6,7 @@
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 21:09:29 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/10 22:58:22 by andjenna         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:01:50 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_strcmp(char *s1, char *s2)
 	return (*s1 - *s2);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	s1[] = "eau";
 	char	s2[] = "bateau";
 
 	printf("%d", ft_strcmp(s1, s2));
 	return (0);
-}*/
+}
