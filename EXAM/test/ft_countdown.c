@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wd_match.c                                         :+:      :+:    :+:   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 20:11:15 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/27 17:07:32 by andjenna         ###   ########.fr       */
+/*   Created: 2023/09/27 00:27:22 by andjenna          #+#    #+#             */
+/*   Updated: 2023/09/27 00:34:32 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	wdmatch(char *s1, char *s2)
+int	main(void)
 {
-	int	len;
-	int	i;
+	char	c = '9';
 
-	i = 0;
-	len = 0;
-	while (s1[len] != '\0')
-		len++;
-	while (*s2 && i < len)
-		(*s2++ == s1[i]) ? ++i : 0;
-	if (i == len)
-		write(1, s1, len);
-}
-
-int	main(int ac, char **av)
-{
-	if (ac == 3)
-		wdmatch(av[1], av[2]);
+	while (c >= '0')
+	{
+		write(1, &c, 1);
+		c--;
+	}
 	write(1, "\n", 1);
 	return (0);
 }

@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wd_match.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 20:11:15 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/27 17:07:32 by andjenna         ###   ########.fr       */
+/*   Created: 2023/09/27 00:39:57 by andjenna          #+#    #+#             */
+/*   Updated: 2023/09/27 00:50:36 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	wdmatch(char *s1, char *s2)
+char	*ft_strcpy(char *s1, char *s2)
 {
-	int	len;
-	int	i;
-
-	i = 0;
-	len = 0;
-	while (s1[len] != '\0')
-		len++;
-	while (*s2 && i < len)
-		(*s2++ == s1[i]) ? ++i : 0;
-	if (i == len)
-		write(1, s1, len);
+	while (*s2 != '\0')
+		*s1++ = *s2++;
+	*s1 = '\0';
+	return (s1);
 }
 
 int	main(int ac, char **av)
 {
 	if (ac == 3)
-		wdmatch(av[1], av[2]);
-	write(1, "\n", 1);
+	ft_strcpy(av[2], av[1]);
+	printf("%s", av[2]);
 	return (0);
 }
