@@ -6,7 +6,7 @@
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:46:40 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/18 20:49:45 by andjenna         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:40:09 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int	*ft_range(int min, int max)
 	int	i;
 
 	i = 0;
-	if (min > max)
+	if (min >= max)
 		return (NULL);
-	tab = (int *)malloc(sizeof(int) * (max - min + 1));
-	while (i < (max - min + 1))
+	tab = (int *)malloc(sizeof(int) * (max - min));
+	if (!tab)
+		return (NULL);
+	while (i < (max - min))
 	{
 		tab[i] = min + i;
 		i++;
@@ -32,8 +34,8 @@ int	*ft_range(int min, int max)
 
 /*int	main()
 {
-	int	min = 0;
-	int	max = 100;
+	int	min = 10;
+	int	max = 10;
 
 	int	*result = ft_range(min, max);
 
@@ -44,7 +46,7 @@ int	*ft_range(int min, int max)
 	}
 
 	printf("Tableau généré : ");
-	for (int i = 0; i < (max - min + 1); i++)
+	for (int i = 0; i < (max - min); i++)
 	{
 		printf("%d ", result[i]);
 	}

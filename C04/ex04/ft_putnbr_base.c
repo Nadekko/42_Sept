@@ -6,7 +6,7 @@
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:49:55 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/14 03:11:15 by andjenna         ###   ########.fr       */
+/*   Updated: 2023/09/20 02:14:08 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ int	ft_strlen(char *str)
 	int	len;
 
 	len = 0;
-	while (*str != '\0')
+	while (str[len] != '\0')
 	{
 		len++;
-		str++;
 	}
 	return (len);
 }
@@ -83,6 +82,7 @@ int	main(int argc, char **argv)
 	char	*basesymbols;
 	int		n;
 
+	(void)argc;
 	n = atoi(argv[1]);
 	basesymbols = argv[2];
 	ft_putnbr_base(n, basesymbols);

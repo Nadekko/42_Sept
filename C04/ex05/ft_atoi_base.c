@@ -6,7 +6,7 @@
 /*   By: andjenna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 00:53:48 by andjenna          #+#    #+#             */
-/*   Updated: 2023/09/14 03:09:35 by andjenna         ###   ########.fr       */
+/*   Updated: 2023/09/20 02:11:24 by andjenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ int	ft_strlen(char *str)
 	int	len;
 
 	len = 0;
-	while (*str != '\0')
+	while (str[len] != '\0')
 	{
 		len++;
-		str++;
 	}
 	return (len);
 }
@@ -45,7 +44,7 @@ int	ft_base_invalid(char *base)
 	while (base[i])
 	{
 		if ((base[i] == '-') || (base[i] == '+')
-			|| (base[i] >= 0 && base[i] <= 32) && (base[i] == 126))
+			|| ((base[i] >= 0 && base[i] <= 32) || (base[i] == 126)))
 			return (1);
 		j = i + 1;
 		while (base[j])
@@ -92,14 +91,18 @@ int	ft_atoi_base(char *str, char *base)
 			sign = -sign;
 		i++;
 	}
-	while (str[i] && get_index(str[i], base) != -1)
+	while (str[i] && get_index(str[i], base) >= 0)
 	{
 		result = result * ft_strlen(base) + get_index(str[i], base);
 		i++;
 	}
 	return (result * sign);
 }
-
+int main(int ac, char **av)
+{
+	(void)ac;
+	printf("%d\n", ft_atoi_base(av[1], av[2]));
+}
 /*int	main(int argc, char **argv)
 {
 	char	*basesymbols;

@@ -31,12 +31,12 @@ int	main(void)
 	printf("%s\n", ft_strlcat(s7a, s8a, 0) == strlcat(s7b, s8b, 0) ? "Success" : "Fail");
 	printf("%s\n", strcmp(s7a, s7b) == 0 && strcmp(s8a, s8b) == 0 ? "Success" : "Fail");
 	
-	/*	
+	
 	printf("\n\nDetails:\n");
 
 	printf("%s:%s\n%s:%s\n", s1a, s1b, s2a, s2b);
 	printf("%s:%s\n%s:%s\n", s3a, s3b, s4a, s4b);
 	printf("%s:%s\n%s:%s\n", s5a, s5b, s6a, s6b);
 	printf("%s:%s\n%s:%s\n", s7a, s7b, s8a, s8b);
-	*/
+	
 }
